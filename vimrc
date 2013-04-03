@@ -60,6 +60,10 @@ if &t_Co > 2 || has("gui_running")
 	syntax on
 endif
 
+if has("gui_running")
+	set guifont=Monaco:h13
+endif
+
 " Exchange spaces and tabs with special characters
 set list
 set listchars=tab:>.,trail:.,extends:#,nbsp:.
