@@ -66,9 +66,7 @@ endif
 
 " Exchange spaces and tabs with special characters
 set list
-set listchars=tab:>.,trail:.,extends:#,nbsp:.
-
-autocmd filetype html,xml set listchars-=tab:>.
+set listchars=tab:▸\ ,eol:¬
 
 " Mouse
 set mouse=a
@@ -93,6 +91,13 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-nmap <silent> ,/ :nohlsearch<CR>
+" Ctrl P
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/]\.(git|hg|svn)$',
+	\ 'file': '\v\.(exe|so|dll|class)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
 
+" Hide highlighting
+nmap <silent> ,/ :nohlsearch<CR>
 
