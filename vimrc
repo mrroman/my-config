@@ -85,6 +85,12 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+" Textmate indentation commands
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
+
 " Easy window navigation
 map <C-h> <C-w>h
 map <C-j> <C-w>j
