@@ -1,3 +1,5 @@
+set encoding=UTF-8
+
 " This must be first, because it changes other options as side effect
 set nocompatible
 
@@ -55,13 +57,16 @@ if &t_Co >= 256 || has("gui_running")
 	colorscheme mustang
 endif
 
-if &t_Co > 2 || has("gui_running")
+if &t_co > 2 || has("gui_running")
 	" switch syntax highlighting on, when the terminal has colors
 	syntax on
 endif
 
-if has("gui_running")
+if has("gui_mac")
 	set guifont=Monaco:h13
+end
+if has( "gui_win32")
+	set guifont=Consolas:h11
 endif
 
 " Exchange spaces and tabs with special characters
