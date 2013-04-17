@@ -1,7 +1,3 @@
-vimfiles/ruby/command-t/*.o
-vimfiles/ruby/command-t/*.so
-vimfiles/ruby/command-t/*.bundle
-vimfiles/ruby/command-t/mkmf.log
 vimfiles/.netrwhist
 vimfiles/.VimballRecord
 
