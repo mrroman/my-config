@@ -112,3 +112,6 @@ let g:ctrlp_custom_ignore = {
 " Hide highlighting
 nmap <silent> ,/ :nohlsearch<CR>
 
+" No intro
+set shortmess+=I
+
