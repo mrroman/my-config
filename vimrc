@@ -57,7 +57,7 @@ if &t_Co >= 256 || has("gui_running")
 	colorscheme mustang
 endif
 
-if &t_co > 2 || has("gui_running")
+if &t_Co > 2 || has("gui_running")
 	" switch syntax highlighting on, when the terminal has colors
 	syntax on
 endif
@@ -114,4 +114,10 @@ nmap <silent> ,/ :nohlsearch<CR>
 
 " No intro
 set shortmess+=I
+
+" Configure netrw
+let g:netrw_liststyle=3 " Use tree-mode as default view
+let g:netrw_browse_split=4 " Open file in previous buffer
+let g:netrw_preview=1 " preview window shown in a vertically split
+let g:netrw_winsize=20
 
