@@ -1,4 +1,5 @@
-My Vim configuration
-====================
+My local terminal settings
+==========================
+
 
 
