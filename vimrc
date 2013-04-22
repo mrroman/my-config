@@ -83,6 +83,7 @@ nnoremap ; :
 " Use Q for formatting the current paragraph (or selection)
 vmap Q gq
 nmap Q gqap
+map <Leader>f gg=G
 
 " Get rid of LRUD
 map <up> <nop>
