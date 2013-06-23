@@ -54,13 +54,14 @@ autocmd filetype html set shiftwidth=2
 
 " Colors
 if &t_Co >= 256 || has("gui_running")
-	colorscheme mustang
+	colorscheme slate
+	set background=dark
 endif
 
-if &t_Co > 2 || has("gui_running")
+"if &t_Co > 2 || has("gui_running")
 	" switch syntax highlighting on, when the terminal has colors
-	syntax on
-endif
+"	syntax on
+"endif
 
 if has("gui_mac") || has("gui_macvim")
 	set guifont=Monaco:h13
@@ -121,4 +122,8 @@ let g:netrw_liststyle=3 " Use tree-mode as default view
 let g:netrw_browse_split=4 " Open file in previous buffer
 let g:netrw_preview=1 " preview window shown in a vertically split
 let g:netrw_winsize=20
+
+" Configure omni completion
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
