@@ -137,3 +137,6 @@ au Syntax * RainbowParenthesesLoadBraces
 " Markdown syntax
 au BufRead,BufNewFile *.md set filetype=markdown
 
+" Vimgrep for words
+map <Leader>* :execute "vimgrep /".expand('<cword>')."/ **/*"<CR>:copen<CR>
+
