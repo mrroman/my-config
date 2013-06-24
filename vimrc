@@ -134,3 +134,6 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" Markdown syntax
+au BufRead,BufNewFile *.md set filetype=markdown
+
