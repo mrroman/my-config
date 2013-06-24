@@ -18,6 +18,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 set hidden
 set nowrap        " don't wrap lines
 set tabstop=4     " a tab is four spaces
+set softtabstop=4
 set backspace=indent,eol,start
                   " allow backspacing over everything in insert mode
 set autoindent    " always set autoindenting on
@@ -47,10 +48,10 @@ set noswapfile
 " Indentation settings
 filetype plugin indent on
 
-autocmd filetype javascript set tabstop=2
-autocmd filetype javascript set shiftwidth=2
-autocmd filetype html set tabstop=2
-autocmd filetype html set shiftwidth=2
+autocmd filetype javascript setlocal tabstop=2
+autocmd filetype javascript setlocal shiftwidth=2
+autocmd filetype html setlocal tabstop=2
+autocmd filetype html setlocal shiftwidth=2
 
 " Colors
 if &t_Co >= 256 || has("gui_running")
@@ -126,4 +127,10 @@ let g:netrw_winsize=20
 " Configure omni completion
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Configure rainbow parenthesis
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
 
