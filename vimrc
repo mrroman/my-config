@@ -59,10 +59,10 @@ if &t_Co >= 256 || has("gui_running")
 	set background=dark
 endif
 
-"if &t_Co > 2 || has("gui_running")
+if &t_Co > 2 || has("gui_running")
 	" switch syntax highlighting on, when the terminal has colors
-"	syntax on
-"endif
+	syntax on
+endif
 
 if has("gui_mac") || has("gui_macvim")
 	set guifont=Monaco:h13
