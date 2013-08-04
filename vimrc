@@ -50,7 +50,9 @@ filetype plugin indent on
 
 autocmd filetype javascript setlocal tabstop=2
 autocmd filetype javascript setlocal shiftwidth=2
+autocmd filetype javascript setlocal softtabstop=2
 autocmd filetype html setlocal tabstop=2
+autocmd filetype html setlocal softtabstop=2
 autocmd filetype html setlocal shiftwidth=2
 
 " Colors
