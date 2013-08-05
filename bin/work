@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd ~/repos/work/$1 
+tmux new -A -s $1
+

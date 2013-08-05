@@ -1,0 +1,54 @@
+#!/bin/sh
+
+if [ ! -e ~/.config/jira ]
+then
+	echo "Create file ~/.config/jira and put there:"
+	echo 
+	echo "JIRA_HOST="
+	echo "AUTH=user:passwd"
+	echo "PROJECT="
+	echo
+	exit
+fi
+
+. ~/.config/jira
+
+function jira_call() {
+	curl -s --basic -u $AUTH --noproxy $JIRA_HOST https://$JIRA_HOST$1 || ( echo "Error $?" ; exit 1)
+}
+
+function json_eval() {
+	python -c "import json; import sys; d=json.load(sys.stdin); print $1"
+}
+
+function escape_url() {
+	python -c "import urllib; print urllib.quote_plus('$1')"
+}
+
+function jira_query() {
+	local QUERY=`escape_url "$1"`
+	jira_call "/rest/api/latest/search?jql=$QUERY&fields=summary&fields=key"
+}
+
+function issue() {
+	echo -n "$1: "
+	if [ -z $2 ]
+	then
+		QUERY="d['fields']['summary']"
+	else
+		QUERY="d$2"
+	fi
+
+	jira_call "/rest/api/latest/issue/$1" | json_eval $QUERY
+}
+
+function todo() {
+	local USER=`echo $AUTH | cut -d : -f 1`
+	local QUERY="assignee = $USER and status not in (Done, Closed, \"In UAT\", \"UAT Approved\") and project = $PROJECT" 
+	local VIEW="'\\n'.join(map(lambda x: x['key'] + ': ' + x['fields']['summary'], d['issues']))"
+	echo "$USER TO DO:"
+	jira_query "$QUERY" | json_eval "$VIEW"
+}
+
+$1 $2 $3 $4
+
