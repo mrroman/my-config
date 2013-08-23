@@ -27,3 +27,11 @@ PROMPT='%{$fg[yellow]%}%~%{$reset_color%}${vcs_info_msg_0_} %# '
 
 . ~/.bin/z/z.sh
 . ~/.aliases
+
+export PATH="$HOME/.bin:$PATH"
+
+clear 
+echo 
+echo
+cat ~/.motd | sed 's/^/    /'
+

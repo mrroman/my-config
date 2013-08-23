@@ -2,7 +2,7 @@
 
 if hg status > /dev/null 2> /dev/null
 then
-	hg log
+	hg log | less
 elif git status > /dev/null 2> /dev/null
 then
 	git log

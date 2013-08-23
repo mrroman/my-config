@@ -11,7 +11,6 @@ function l() {
 }
 
 l zshrc .zshrc
-l zprofile .zprofile
 l aliases .aliases
 l vimfiles .vim
 l vimrc .vimrc
