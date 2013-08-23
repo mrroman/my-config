@@ -23,7 +23,7 @@ precmd() {
 }
 
 setopt prompt_subst
-PROMPT='%{$fg[yellow]%}%~%{$reset_color%}${vcs_info_msg_0_} %# '
+PROMPT=' %{$fg[yellow]%}%~%{$reset_color%}${vcs_info_msg_0_} %# '
 
 . ~/.bin/z/z.sh
 . ~/.aliases
@@ -31,7 +31,10 @@ PROMPT='%{$fg[yellow]%}%~%{$reset_color%}${vcs_info_msg_0_} %# '
 export PATH="$HOME/.bin:$PATH"
 
 clear 
-echo 
-echo
-cat ~/.motd | sed 's/^/    /'
+if [ -z $TMUX ] 
+then
+	echo 
+	echo
+	cat ~/.motd | sed 's/^/    /'
+fi
 
