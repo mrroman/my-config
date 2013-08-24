@@ -109,7 +109,7 @@ map <C-l> <C-w>l
 
 " Ctrl P
 let g:ctrlp_custom_ignore = {
-	\ 'dir':  '\v[\/](\.(git|hg|svn)|target)$',
+	\ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|dist|target)$',
 	\ 'file': '\v\.(exe|so|dll|class)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
