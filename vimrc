@@ -48,12 +48,8 @@ set noswapfile
 " Indentation settings
 filetype plugin indent on
 
-autocmd filetype javascript setlocal tabstop=2
-autocmd filetype javascript setlocal shiftwidth=2
-autocmd filetype javascript setlocal softtabstop=2
-autocmd filetype html setlocal tabstop=2
-autocmd filetype html setlocal softtabstop=2
-autocmd filetype html setlocal shiftwidth=2
+autocmd filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Colors
 if &t_Co >= 256 || has("gui_running")
