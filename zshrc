@@ -33,8 +33,7 @@ export PATH="$HOME/.bin:$PATH"
 clear 
 if [ -z $TMUX ] 
 then
-	echo 
 	echo
-	cat ~/.motd | sed 's/^/    /'
+	[ -e ~/.motd ] && cat ~/.motd | sed 's/^/    /'
 fi
 
