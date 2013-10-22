@@ -13,3 +13,6 @@
 [submodule "bin/screenfetch"]
 	path = bin/screenfetch
 	url = https://github.com/KittyKatt/screenFetch
+[submodule "vimfiles/bundle/vim-cucumber"]
+	path = vimfiles/bundle/vim-cucumber
+	url = https://github.com/tpope/vim-cucumber.git
