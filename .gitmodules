@@ -25,3 +25,9 @@
 [submodule "vimfiles/bundle/vim-clojure-static"]
 	path = vimfiles/bundle/vim-clojure-static
 	url = https://github.com/guns/vim-clojure-static.git
+[submodule "vimfiles/bundle/vim-surround"]
+	path = vimfiles/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vimfiles/bundle/vim-dispatch"]
+	path = vimfiles/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch.git
