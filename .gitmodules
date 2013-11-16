@@ -16,3 +16,12 @@
 [submodule "vimfiles/bundle/vim-cucumber"]
 	path = vimfiles/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
+[submodule "vimfiles/bundle/vim-fireplace"]
+	path = vimfiles/bundle/vim-fireplace
+	url = https://github.com/tpope/vim-fireplace.git
+[submodule "vimfiles/bundle/vim-classpath"]
+	path = vimfiles/bundle/vim-classpath
+	url = https://github.com/tpope/vim-classpath.git
+[submodule "vimfiles/bundle/vim-clojure-static"]
+	path = vimfiles/bundle/vim-clojure-static
+	url = https://github.com/guns/vim-clojure-static.git
