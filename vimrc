@@ -109,6 +109,10 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\v\.(exe|so|dll|class)$',
 	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
 	\ }
+let g:ctrlp_match_window_bottom = 0
+
+map <Leader>b :CtrlPBuffer<CR>
+map <Leader>t :CtrlPBufTag<CR>
 
 " Hide highlighting
 nmap <silent> ,/ :nohlsearch<CR>
@@ -116,11 +120,7 @@ nmap <silent> ,/ :nohlsearch<CR>
 " No intro
 set shortmess+=I
 
-" Configure netrw
-let g:netrw_liststyle=3 " Use tree-mode as default view
-let g:netrw_browse_split=4 " Open file in previous buffer
-let g:netrw_preview=1 " preview window shown in a vertically split
-let g:netrw_winsize=20
+map <Leader>o :Explore<CR>
 
 " Configure omni completion
 autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
@@ -137,4 +137,3 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " Vimgrep for words
 map <Leader>* :execute "vimgrep /".expand('<cword>')."/ **/*"<CR>:copen<CR>
-
