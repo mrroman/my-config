@@ -46,6 +46,9 @@ set noerrorbells         " don't beep
 set nobackup
 set noswapfile
 
+" Status line
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+
 " Indentation settings
 filetype plugin indent on
 

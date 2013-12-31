@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 if [ ! -e ~/.config/jira ]
 then
@@ -39,7 +39,9 @@ function issue() {
 		QUERY="d$2"
 	fi
 
-	jira_call "/rest/api/latest/issue/$1" | json_eval $QUERY
+	local task_id
+	task_id=`echo $1 | sed 's/ITT-/ITTEEODTUSE-/'`
+	jira_call "/rest/api/latest/issue/$task_id" | json_eval $QUERY
 }
 
 function todo() {
