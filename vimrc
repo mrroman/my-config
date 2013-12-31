@@ -54,7 +54,8 @@ autocmd filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Colors
 if &t_Co >= 256 || has("gui_running")
-	colorscheme slate
+    let g:solarized_termcolors=256
+	colorscheme solarized
 	set background=dark
 endif
 
@@ -138,3 +139,4 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " Vimgrep for words
 map <Leader>* :execute "vimgrep /".expand('<cword>')."/ **/*"<CR>:copen<CR>
+
