@@ -46,8 +46,8 @@ set noerrorbells         " don't beep
 set nobackup
 set noswapfile
 
-" Status line
-set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
+" vim-airline
+set laststatus=2
 
 " Indentation settings
 filetype plugin indent on
