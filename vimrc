@@ -56,6 +56,7 @@ autocmd filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expand
 autocmd filetype ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd filetype erb setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+" Indentation for xml files
 autocmd filetype xml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Colors
