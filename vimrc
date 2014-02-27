@@ -56,6 +56,7 @@ autocmd filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expand
 autocmd filetype ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd filetype erb setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd filetype python setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Colors
 if &t_Co >= 256 || has("gui_running")
@@ -144,4 +145,5 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " Vimgrep for words
 map <Leader>* :execute "vimgrep /".expand('<cword>')."/ **/*"<CR>:copen<CR>
+
 
