@@ -6,6 +6,7 @@ alias g=git
 alias v=vim
 
 alias grep='grep --color=auto'
+alias hl='highlight -O xterm256'
 
 # from Paul Irish dotfiles
 #

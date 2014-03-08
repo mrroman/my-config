@@ -19,7 +19,7 @@ zstyle ":vcs_info:*" unstagedstr "%{$fg_bold[green]%}!%{$reset_color%}"
 zstyle ":vcs_info:*" stagedstr "%{$fg_bold[yellow]%}+%{$reset_color%}"
 
 precmd() {
-	vcs_info
+    vcs_info
 }
 
 setopt prompt_subst
@@ -33,9 +33,40 @@ export PATH="$HOME/.bin:$PATH"
 clear 
 if [ -z $TMUX ] 
 then
-	echo
-	[ -e ~/.motd ] && cat ~/.motd | sed 's/^/    /'
+    echo
+    [ -e ~/.motd ] && cat ~/.motd | sed 's/^/    /'
 fi
 
 [ "$TERM" = "xterm" ] && export TERM=xterm-256color
 
+bindkey -v
+
+# no delay entering normal mode
+# https://coderwall.com/p/h63etq
+# https://github.com/pda/dotzsh/blob/master/keyboard.zsh#L10
+# 10ms for key sequences
+KEYTIMEOUT=1
+
+# show vim status
+# http://zshwiki.org/home/examples/zlewidgets
+function zle-line-init zle-keymap-select {
+    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
+    RPS2=$RPS1
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
+
+# add missing vim hotkeys
+# fixes backspace deletion issues
+# http://zshwiki.org/home/zle/vi-mode
+bindkey -a u undo
+bindkey -a '^R' redo
+bindkey '^?' backward-delete-char
+bindkey '^H' backward-delete-char
+
+# history search in vim mode
+# http://zshwiki.org./home/zle/bindkeys#why_isn_t_control-r_working_anymore
+bindkey -M viins '^s' history-incremental-search-backward
+bindkey -M vicmd '^s' history-incremental-search-backward
