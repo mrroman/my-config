@@ -46,6 +46,8 @@ function git_config
     git config --global alias.co checkout
     git config --global alias.st status
     git config --global alias.ci commit
+    git config --global alias.l "log --graph --pretty=format:'%C(yellow)%h%Creset%C(blue)%d%Creset %C(white bold)%s%Creset %C(white dim)(by %an %ar)%Creset'"
+    git config --global alias.ll "!git l --all"
 
     log 2 "Git" "Set credential"
     git config --global credential.helper cache
