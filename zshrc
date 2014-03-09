@@ -49,9 +49,15 @@ KEYTIMEOUT=1
 
 # show vim status
 # http://zshwiki.org/home/examples/zlewidgets
+#function zle-line-init zle-keymap-select {
+#    RPS1="${${KEYMAP/vicmd/$fg_bold[yellow]I$reset_color}/(main|viins)/-- INSERT --}"
+#    RPS2=$RPS1
+#    zle reset-prompt
+#}
+
 function zle-line-init zle-keymap-select {
-    RPS1="${${KEYMAP/vicmd/-- NORMAL --}/(main|viins)/-- INSERT --}"
-    RPS2=$RPS1
+    VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+    RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/}$EPS1"
     zle reset-prompt
 }
 

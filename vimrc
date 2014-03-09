@@ -89,6 +89,9 @@ set mouse=a
 " Efficiency
 nnoremap ; :
 
+" Key maps
+map <Leader>q :qa<CR>
+
 " Formatting
 " Use Q for formatting the current paragraph (or selection)
 vmap Q gq
@@ -147,5 +150,4 @@ au BufRead,BufNewFile *.md set filetype=markdown
 
 " Vimgrep for words
 map <Leader>* :execute "vimgrep /".expand('<cword>')."/ **/*"<CR>:copen<CR>
-
 
