@@ -52,6 +52,9 @@ function git_config
     log 2 "Git" "Set credential"
     git config --global credential.helper cache
     git config --global credential.helper 'cache --timeout=3600'
+    
+    log 2 "Git" "Vimdiff"
+    git config --global diff.external ~/.bin/git_diff_wrapper
 }
 
 for nm in set_links git_config
