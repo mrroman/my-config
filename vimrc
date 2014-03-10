@@ -54,6 +54,7 @@ filetype plugin indent on
 
 autocmd filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 autocmd filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 formatoptions+=l
 
 " Colors
 if &t_Co >= 256 || has("gui_running")
