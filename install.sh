@@ -55,6 +55,9 @@ function git_config
     
     log 2 "Git" "Vimdiff"
     git config --global diff.external ~/.bin/git_diff_wrapper
+
+    log 2 "Git" "Set default push strategy to simple"
+    git config --global push.default simple
 }
 
 for nm in set_links git_config
