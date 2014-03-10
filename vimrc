@@ -53,8 +53,13 @@ set laststatus=2
 filetype plugin indent on
 
 autocmd filetype javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 expandtab
+autocmd filetype ruby setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+autocmd filetype erb setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd filetype html setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 autocmd filetype markdown setlocal wrap linebreak nolist textwidth=0 wrapmargin=0 formatoptions+=l
+autocmd filetype python setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
+" Indentation for xml files
+autocmd filetype xml setlocal tabstop=2 softtabstop=2 shiftwidth=2 expandtab
 
 " Colors
 if &t_Co >= 256 || has("gui_running")
@@ -84,6 +89,9 @@ set mouse=a
 
 " Efficiency
 nnoremap ; :
+
+" Key maps
+map <Leader>q :qa<CR>
 
 " Formatting
 " Use Q for formatting the current paragraph (or selection)
@@ -144,3 +152,21 @@ au BufRead,BufNewFile *.md set filetype=markdown
 " Vimgrep for words
 map <Leader>* :execute "vimgrep /".expand('<cword>')."/ **/*"<CR>:copen<CR>
 
+" Rainbow parenthesis
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
