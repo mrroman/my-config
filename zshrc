@@ -1,16 +1,44 @@
-# Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
-bindkey -e
+bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/konrad/.zshrc'
 
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
 
+# Init teminal
+#
+[ "$TERM" = "xterm" ] && export TERM=xterm-256color
+
+# zkbd - configuration of key bindings
+#
+autoload zkbd
+if [ -e ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE} ]
+then
+    source ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
+else
+    echo "Set up keyboard"
+    zkbd
+    source ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
+fi
+
+[[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
+[[ -n ${key[Insert]} ]] && bindkey "${key[Insert]}" overwrite-mode
+[[ -n ${key[Home]} ]] && bindkey "${key[Home]}" beginning-of-line
+[[ -n ${key[PageUp]} ]] && bindkey "${key[PageUp]}" up-line-or-history
+[[ -n ${key[Delete]} ]] && bindkey "${key[Delete]}" delete-char
+[[ -n ${key[End]} ]] && bindkey "${key[End]}" end-of-line
+[[ -n ${key[PageDown]} ]] && bindkey "${key[PageDown]}" down-line-or-history
+[[ -n ${key[Up]} ]] && bindkey "${key[Up]}" up-line-or-search
+[[ -n ${key[Left]} ]] && bindkey "${key[Left]}" backward-char
+[[ -n ${key[Down]} ]] && bindkey "${key[Down]}" down-line-or-search
+[[ -n ${key[Right]} ]] && bindkey "${key[Right]}" forward-char
+
+# Colors and VCS
+#
 autoload -U colors && colors
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' formats "(%{$fg[green]%}%b%{$reset_color%})"
@@ -30,16 +58,12 @@ PROMPT=' %{$fg[yellow]%}%~%{$reset_color%}${vcs_info_msg_0_} %# '
 
 export PATH="$HOME/.bin:$PATH"
 
-clear 
+#clear 
 if [ -z $TMUX ] 
 then
     echo
     [ -e ~/.motd ] && cat ~/.motd | sed 's/^/    /'
 fi
-
-[ "$TERM" = "xterm" ] && export TERM=xterm-256color
-
-bindkey -v
 
 # no delay entering normal mode
 # https://coderwall.com/p/h63etq
@@ -75,4 +99,3 @@ bindkey '^H' backward-delete-char
 # history search in vim mode
 # http://zshwiki.org./home/zle/bindkeys#why_isn_t_control-r_working_anymore
 bindkey -M viins '^s' history-incremental-search-backward
-bindkey -M vicmd '^s' history-incremental-search-backward
