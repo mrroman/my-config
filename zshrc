@@ -9,6 +9,8 @@ zstyle :compinstall filename '/home/konrad/.zshrc'
 autoload -Uz compinit
 compinit
 
+clear
+
 # Init teminal
 #
 [ "$TERM" = "xterm" ] && export TERM=xterm-256color
@@ -20,9 +22,9 @@ if [ -e ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE} ]
 then
     source ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 else
-    echo "Set up keyboard"
-    zkbd
-    source ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
+    echo "Please set up keyboard"
+    #zkbd
+    #source ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 fi
 
 [[ -n ${key[Backspace]} ]] && bindkey "${key[Backspace]}" backward-delete-char
@@ -58,12 +60,11 @@ PROMPT=' %{$fg[yellow]%}%~%{$reset_color%}${vcs_info_msg_0_} %# '
 
 export PATH="$HOME/.bin:$PATH"
 
-#clear 
-if [ -z $TMUX ] 
-then
-    echo
-    [ -e ~/.motd ] && cat ~/.motd | sed 's/^/    /'
-fi
+#if [ -z $TMUX ] 
+#then
+#    echo
+#    [ -e ~/.motd ] && cat ~/.motd | sed 's/^/    /'
+#fi
 
 # no delay entering normal mode
 # https://coderwall.com/p/h63etq
