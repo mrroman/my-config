@@ -22,7 +22,7 @@ if [ -e ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE} ]
 then
     source ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 else
-    echo "Please set up keyboard"
+    #echo "Please set up keyboard"
     #zkbd
     #source ~/.zkbd/$TERM-${${DISPLAY:t}:-$VENDOR-$OSTYPE}
 fi

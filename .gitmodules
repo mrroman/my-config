@@ -46,3 +46,6 @@
 [submodule "vimfiles/bundle/tabular"]
 	path = vimfiles/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+[submodule "vimfiles/bundle/tern_for_vim"]
+	path = vimfiles/bundle/tern_for_vim
+	url = https://github.com/marijnh/tern_for_vim.git
