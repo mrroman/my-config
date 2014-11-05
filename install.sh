@@ -1,24 +1,21 @@
-#!/bin/sh
+#!/bin/bash
 
-
-function log()
-{
+function log {
     h1color='\e[0;32m'
     h2color='\e[0;36m'
     endColor='\e[0m'
 
     case "$1" in
         1)
-            echo "${h1color}$2${endColor}: $3"
+            echo -e "${h1color}$2${endColor}: $3"
             ;;
         2) 
-            echo "${h2color}$2${endColor}: $3"
+            echo -e "${h2color}$2${endColor}: $3"
             ;;
     esac
 }
 
-function l() 
-{
+function l {
     if [ ! -e ~/$2 ]
     then
         log 2 "Links" "Linking $1 to $2"
@@ -28,8 +25,7 @@ function l()
     fi
 }
 
-function set_links
-{
+function set_links {
     log 1 "Set configuration links"
     l zshrc .zshrc
     l aliases .aliases
@@ -39,8 +35,7 @@ function set_links
     l bin .bin
 }
 
-function git_config
-{
+function git_config {
     log 1 "Configure Git"
     log 2 "Git" "Set aliases"
     git config --global alias.co checkout
