@@ -1,57 +1,76 @@
 [submodule "tmux-powerline"]
 	path = tmux-powerline
 	url = https://github.com/erikw/tmux-powerline.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-javascript"]
 	path = vimfiles/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-markdown"]
 	path = vimfiles/bundle/vim-markdown
 	url = https://github.com/tpope/vim-markdown.git
+    ignore = untracked
 [submodule "bin/z"]
 	path = bin/z
 	url = https://github.com/rupa/z
+    ignore = untracked
 [submodule "bin/screenfetch"]
 	path = bin/screenfetch
 	url = https://github.com/KittyKatt/screenFetch
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-cucumber"]
 	path = vimfiles/bundle/vim-cucumber
 	url = https://github.com/tpope/vim-cucumber.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-fireplace"]
 	path = vimfiles/bundle/vim-fireplace
 	url = https://github.com/tpope/vim-fireplace.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-classpath"]
 	path = vimfiles/bundle/vim-classpath
 	url = https://github.com/tpope/vim-classpath.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-clojure-static"]
 	path = vimfiles/bundle/vim-clojure-static
 	url = https://github.com/guns/vim-clojure-static.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-surround"]
 	path = vimfiles/bundle/vim-surround
 	url = https://github.com/tpope/vim-surround.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-dispatch"]
 	path = vimfiles/bundle/vim-dispatch
 	url = https://github.com/tpope/vim-dispatch.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-colors-solarized"]
 	path = vimfiles/bundle/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-airline"]
 	path = vimfiles/bundle/vim-airline
 	url = https://github.com/bling/vim-airline
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-fugitive"]
 	path = vimfiles/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive.git
+    ignore = untracked
 [submodule "vimfiles/bundle/taskpaper"]
 	path = vimfiles/bundle/taskpaper
 	url = https://github.com/davidoc/taskpaper.vim.git
+    ignore = untracked
 [submodule "vimfiles/bundle/tabular"]
 	path = vimfiles/bundle/tabular
 	url = https://github.com/godlygeek/tabular.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vim-vinegar"]
 	path = vimfiles/bundle/vim-vinegar
 	url = https://github.com/tpope/vim-vinegar.git
+    ignore = untracked
 [submodule "vimfiles/bundle/tern_for_vim"]
 	path = vimfiles/bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
+    ignore = untracked
 [submodule "vimfiles/bundle/vimoutliner"]
 	path = vimfiles/bundle/vimoutliner
 	url = https://github.com/vimoutliner/vimoutliner.git
+    ignore = untracked
