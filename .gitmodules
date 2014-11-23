@@ -70,7 +70,3 @@
 	path = vimfiles/bundle/tern_for_vim
 	url = https://github.com/marijnh/tern_for_vim.git
     ignore = untracked
-[submodule "vimfiles/bundle/vimoutliner"]
-	path = vimfiles/bundle/vimoutliner
-	url = https://github.com/vimoutliner/vimoutliner.git
-    ignore = untracked
