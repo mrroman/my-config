@@ -1,0 +1,184 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-sleuth'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-vinegar'
+
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "garbas/vim-snipmate"
+Bundle 'ervandew/supertab'
+Plugin 'honza/vim-snippets'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'mhinz/vim-signify'
+
+Plugin 'sjl/gundo.vim'
+Plugin 'scrooloose/syntastic'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'flazz/vim-colorschemes'
+
+Plugin 'guns/vim-clojure-static'
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'kovisoft/paredit'
+Plugin 'guns/vim-clojure-highlight'
+Plugin 'tpope/vim-leiningen'
+Plugin 'tpope/vim-classpath'
+Plugin 'tpope/vim-projectionist'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-fireplace'
+
+Plugin 'pangloss/vim-javascript'
+Plugin 'marijnh/tern_for_vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" General
+set hidden
+set nobackup
+set noswapfile
+
+set number	" Show line numbers
+set linebreak	" Break lines at word (requires Wrap lines)
+set showbreak=+++	" Wrap-broken line prefix
+set textwidth=100	" Line wrap (number of cols)
+set showmatch	" Highlight matching brace
+set visualbell	" Use visual bell (no beeping)
+ 
+set hlsearch	" Highlight all search results
+set smartcase	" Enable smart-case search
+set ignorecase	" Always case-insensitive
+set incsearch	" Searches for strings incrementally
+ 
+set autoindent	" Auto-indent new lines
+set copyindent    " copy the previous indentation on autoindenting
+set cindent	" Use 'C' style program indenting
+set tabstop=4
+set expandtab	" Use spaces instead of tabs
+set shiftwidth=4	" Number of auto-indent spaces
+set smartindent	" Enable smart-indent
+set smarttab	" Enable smart-tabs
+set softtabstop=4	" Number of spaces per Tab
+ 
+" Advanced
+set ruler	" Show row and column ruler information
+ 
+set undolevels=1000	" Number of undo levels
+set backspace=indent,eol,start	" Backspace behaviour
+
+colorscheme hybrid
+syntax on
+
+if has("gui_mac") || has("gui_macvim")
+	set guifont=Monaco:h13
+end
+if has( "gui_win32")
+	set guifont=Consolas:h11
+endif
+
+" change the mapleader from \ to ,
+let mapleader=","
+
+" Mouse
+set mouse=a
+
+" Efficiency
+nnoremap ; :
+
+" Key maps
+map <Leader>q :qa<CR>
+
+" Formatting
+" Use Q for formatting the current paragraph (or selection)
+vmap Q gq
+nmap Q gqap
+map <Leader>f gg=G
+
+" Get rid of LRUD
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+" Textmate indentation commands
+nmap <D-[> <<
+nmap <D-]> >>
+vmap <D-[> <gv
+vmap <D-]> >gv
+
+" Easy window navigation
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Ctrl P
+let g:ctrlp_custom_ignore = {
+	\ 'dir':  '\v[\/](\.(git|hg|svn)|node_modules|dist|target)$',
+	\ 'file': '\v\.(exe|so|dll|class)$',
+	\ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+	\ }
+let g:ctrlp_match_window_bottom = 0
+
+map <Leader>b :CtrlPBuffer<CR>
+map <Leader>t :CtrlPBufTag<CR>
+
+" Hide highlighting
+nmap <silent> ,/ :nohlsearch<CR>
+
+" No intro
+set shortmess+=I
+
+map <Leader>o :Explore<CR>
+
+" Configure omni completion
+autocmd CursorMovedI * if pumvisible() == 0|pclose|endif
+autocmd InsertLeave * if pumvisible() == 0|pclose|endif
+
+" Configure rainbow parenthesis
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
+" Markdown syntax
+au BufRead,BufNewFile *.md set filetype=markdown
+
+" Vimgrep for words
+map <Leader>* :execute "vimgrep /".expand('<cword>')."/ **/*"<CR>:copen<CR>
+
+" Rainbow parenthesis
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
