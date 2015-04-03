@@ -27,10 +27,11 @@ function l {
 
 function set_links {
     log 1 "Set configuration links"
-    l zshrc .zshrc
+#    l zshrc .zshrc
     l aliases .aliases
-    l vimfiles .vim
-    l vimrc .vimrc
+#    l vimfiles .vim
+#    l vimrc .vimrc
+    l vimrc-vundle .vimrc
     l tmux.conf .tmux.conf
     l bin .bin
 }
