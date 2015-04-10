@@ -31,7 +31,7 @@ function setup_zsh {
     [ -d ~/.oh-my-zsh ] || wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 
     log 2 "Set aliases"
-    grep -q 'source ~/.aliases' || echo "source ~/.aliases" >> ~/.zshrc
+    grep -q 'source ~/.aliases' ~/.zshrc || echo "source ~/.aliases" >> ~/.zshrc
     l aliases .aliases
 }
 
