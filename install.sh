@@ -25,13 +25,23 @@ function l {
     fi
 }
 
+function setup_zsh {
+    [ -d ~/.oh-my-zsh ] || wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
+
+    grep -q 'source ~/.aliases' || echo "source ~/.aliases" >> ~/.zshrc
+    l aliases .aliases
+}
+
+function setup_vim {
+    [ -d ~/.vim/bundle/Vundle.vim ] || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+    l vimrc-vundle .vimrc
+
+    vim +PluginInstall +qall
+}
+
 function set_links {
     log 1 "Set configuration links"
-#    l zshrc .zshrc
-    l aliases .aliases
-#    l vimfiles .vim
-#    l vimrc .vimrc
-    l vimrc-vundle .vimrc
+    
     l tmux.conf .tmux.conf
     l bin .bin
 }
@@ -61,7 +71,7 @@ function git_config {
     git config --global push.default simple
 }
 
-for nm in set_links git_config
+for nm in setup_zsh setup_vim set_links git_config
 do
     $nm
     echo

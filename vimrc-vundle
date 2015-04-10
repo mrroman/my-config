@@ -10,6 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Plugin 'thinca/vim-localrc'
+Plugin 'bling/vim-airline'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -161,7 +164,7 @@ au Syntax * RainbowParenthesesLoadBraces
 au BufRead,BufNewFile *.md set filetype=markdown
 
 " Vimgrep for words
-map <Leader>* :execute "vimgrep /".expand('<cword>')."/ **/*"<CR>:copen<CR>
+map <Leader>* :execute "vimgrep /".expand('<cword>')."/ www/**/*"<CR>:copen<CR>
 
 " Rainbow parenthesis
 let g:rbpt_colorpairs = [
@@ -182,3 +185,6 @@ let g:rbpt_colorpairs = [
     \ ['red',         'firebrick3'],
     \ ]
 
+" vim-airline
+let g:airline_powerline_fonts=1
+set laststatus=2

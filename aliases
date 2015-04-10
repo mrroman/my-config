@@ -4,6 +4,7 @@ alias ...="cd ..;cd .."
 
 alias s="python -m SimpleHTTPServer"
 alias g=git
+which vimx > /dev/null 2> /dev/null && alias vim=vimx
 alias v=vim
 
 alias grep='grep --color=auto'
