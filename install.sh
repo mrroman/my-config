@@ -26,16 +26,22 @@ function l {
 }
 
 function setup_zsh {
+    log 1 "Setup ZSH"
+    log 2 "Install OH MY ZSH"
     [ -d ~/.oh-my-zsh ] || wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 
+    log 2 "Set aliases"
     grep -q 'source ~/.aliases' || echo "source ~/.aliases" >> ~/.zshrc
     l aliases .aliases
 }
 
 function setup_vim {
+    log 1 "Setup VIM"
+    log 2 "Install Vundle"
     [ -d ~/.vim/bundle/Vundle.vim ] || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     l vimrc-vundle .vimrc
 
+    log 2 "Install plugins"
     vim +PluginInstall +qall
 }
 
