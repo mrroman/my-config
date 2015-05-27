@@ -136,15 +136,9 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" NOP on confusing moves
-map dj <nop>
-map cj <nop>
-map dk <nop>
-map ck <nop>
-map dh <nop>
-map ch <nop>
-map dl <nop>
-map cl <nop>
+" Buffer navigation keys
+map <C-Left> :bp<CR>
+map <C-Right> :bn<CR>
 
 " Ctrl P
 let g:ctrlp_custom_ignore = {
@@ -202,6 +196,7 @@ let g:rbpt_colorpairs = [
 
 " vim-airline
 let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 
 " paren matching
