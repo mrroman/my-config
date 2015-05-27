@@ -188,3 +188,7 @@ let g:rbpt_colorpairs = [
 " vim-airline
 let g:airline_powerline_fonts=1
 set laststatus=2
+
+" paren matching
+hi MatchParen cterm=bold ctermbg=none ctermfg=green
+
