@@ -37,7 +37,6 @@ Plugin 'flazz/vim-colorschemes'
 
 Plugin 'guns/vim-clojure-static'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'kovisoft/paredit'
 Plugin 'guns/vim-clojure-highlight'
 Plugin 'tpope/vim-leiningen'
 Plugin 'tpope/vim-classpath'
@@ -47,6 +46,9 @@ Plugin 'tpope/vim-fireplace'
 
 Plugin 'pangloss/vim-javascript'
 Plugin 'marijnh/tern_for_vim'
+
+Plugin 'burnettk/vim-angular'
+Plugin 'othree/javascript-libraries-syntax.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -91,6 +93,9 @@ syntax on
 if has("gui_mac") || has("gui_macvim")
 	set guifont=Monaco:h13
 end
+if has("gui_gtk")
+    set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
+end
 if has( "gui_win32")
 	set guifont=Consolas:h11
 endif
@@ -130,6 +135,16 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+
+" NOP on confusing moves
+map dj <nop>
+map cj <nop>
+map dk <nop>
+map ck <nop>
+map dh <nop>
+map ch <nop>
+map dl <nop>
+map cl <nop>
 
 " Ctrl P
 let g:ctrlp_custom_ignore = {
