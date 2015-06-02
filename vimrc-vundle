@@ -16,7 +16,10 @@ endif
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-" Plugin 'Valloric/YouCompleteMe'
+if !has("win32")
+    Plugin 'Valloric/YouCompleteMe'
+end
+
 Plugin 'thinca/vim-localrc'
 Plugin 'bling/vim-airline'
 
@@ -118,9 +121,6 @@ set mouse=a
 
 " Efficiency
 nnoremap ; :
-
-" Key maps
-map <Leader>q :qa<CR>
 
 " Formatting
 " Use Q for formatting the current paragraph (or selection)
