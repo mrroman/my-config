@@ -19,10 +19,19 @@ function l {
     if [ ! -e ~/$2 ]
     then
         log 2 "Links" "Linking $1 to $2"
-        ln -s `pwd`/$1 ~/$2
+        if [ -e `pwd`/$1 ]
+        then
+            ln -s `pwd`/$1 ~/$2
+        else
+            ln -s $1 ~/$2
+        fi
     else
         log 2 "Links" "Already installed $2"
     fi
+}
+
+function append {
+    grep -q "$1" $2 || echo "$1" >> $2
 }
 
 function setup_zsh {
@@ -31,8 +40,11 @@ function setup_zsh {
     [ -d ~/.oh-my-zsh ] || wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - | sh
 
     log 2 "Set aliases"
-    grep -q 'source ~/.aliases' ~/.zshrc || echo "source ~/.aliases" >> ~/.zshrc
+    append "source ~/.aliases" ~/.zshrc
     l aliases .aliases
+
+    log 2 "Set path"
+    append 'export PATH="$PATH:$HOME/bin"' ~/.zshrc
 }
 
 function setup_vim {
@@ -41,7 +53,7 @@ function setup_vim {
     [ -d ~/.vim/bundle/Vundle.vim ] || git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
     l vimrc-vundle .vimrc
 
-    log 2 "Install plugins"
+    log 2 "Install plugins" "Execute Vundle in VIM"
     vim +PluginInstall +qall
 }
 
@@ -49,7 +61,30 @@ function set_links {
     log 1 "Set configuration links"
     
     l tmux.conf .tmux.conf
-    l bin .bin
+    
+    [ -d $HOME/bin ] || mkdir $HOME/bin
+    for bin in bin/* 
+    do
+        l $bin bin/`basename $bin`
+    done
+
+    [ -d $HOME/etc ] || mkdir $HOME/etc
+    for etc in etc/*
+    do
+        l $etc etc/`basename $etc`
+    done
+    
+    l ~/etc/X11/fluxbox .fluxbox
+}
+
+function check_dependencies {
+    log 1 "Check program presence"
+    touch dependencies
+
+    while read dep
+    do
+        which $dep > /dev/null || log 2 "Missing program" "$dep"
+    done < dependencies
 }
 
 function git_config {
@@ -77,7 +112,7 @@ function git_config {
     git config --global push.default simple
 }
 
-for nm in setup_zsh setup_vim set_links git_config
+for nm in setup_zsh setup_vim set_links git_config check_dependencies
 do
     $nm
     echo

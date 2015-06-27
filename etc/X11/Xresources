@@ -1,0 +1,41 @@
+!#include <theme/bow>
+!#include <theme/flashy>
+!#include <theme/hckish>
+!#include <theme/nightly>
+#include <theme/tango>
+!#include <theme/smokey>
+!#include <theme/rubbish>
+!#include <theme/smear>
+!#include <theme/wine>
+
+!*font: -*-tamzenforpowerline-medium-*-normal-*-16-*-*-*-*-*-iso10646-1
+*font: -*-terminus-medium-*-*-*-16-*-*-*-*-*-iso10646-1
+
+Radio*background:           #6699CC
+Radio*foreground:           #EEEEEE
+
+! rxvt-unicode
+URxvt*termName:             rxvt-256color
+URxvt*loginShell:           false
+URxvt*saveLines:            1024
+URxvt*geometry:             80x20
+!URxvt*letterSpace:          -1
+! leave empty to use regular font
+URxvt*boldFont:
+URxvt*scrollBar:            false
+URxvt*cursorBlink:          false
+URxvt*internalBorder:       8
+URxvt*perl-ext-common:      default,url-select,keyboard-select
+URxvt.url-select.launcher:  xdg-open
+URxvt.url-select.underline: true
+URxvt.keysym.M-u:           perl:url-select:select_next
+URxvt.keysym.M-v:           perl:keyboard-select:activate
+
+xmessage*font:                      -*-creep-regular-*-*--16-*-*-*-*-*-*-1
+
+URxvt.keysym.Control-Up:   \033[1;5A
+URxvt.keysym.Control-Down:    \033[1;5B
+URxvt.keysym.Control-Left:    \033[1;5D
+URxvt.keysym.Control-Right:    \033[1;5C
+
+! vim: set fenc=utf-8:ft=xdefaults:

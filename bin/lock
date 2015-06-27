@@ -1,0 +1,10 @@
+#!/bin/sh
+
+IMAGE=`cat ~/.fluxbox/lastwallpaper | cut -f 2 -d '|'`
+
+feh -F $IMAGE &
+FEH_PID=$!
+
+xtrlock
+kill $FEH_PID
+

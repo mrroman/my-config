@@ -1,0 +1,29 @@
+#!/usr/bin/env perl
+#
+
+use Text::Trim qw(trim);
+
+$!=1;
+
+sub text {
+    my $text = shift;
+
+    printf("%s\n", substr($text, 0, 59));
+}
+
+system('setterm -cursor off');
+while(<>) {
+    chomp;
+    if (/^ICY-([A-Z]+):(.+)/) {
+        my $tag = $1;
+        my $content = trim($2);
+
+        if ($tag eq 'META') {
+            $content =~ /StreamTitle='([^']*)'/;
+            text("Song: $1");
+        }
+        if ($tag eq 'NAME') {
+            text("Radio: $content");
+        }
+    }
+}
