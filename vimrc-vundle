@@ -60,6 +60,8 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
+Plugin 'davidhalter/jedi-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
