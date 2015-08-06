@@ -104,7 +104,12 @@ function git_config {
     log 2 "Git" "Set credential"
     git config --global credential.helper cache
     git config --global credential.helper 'cache --timeout=3600'
-    
+   
+    log 2 "Git" "Vim as merge tool"
+    git config --global merge.tool vimdiff
+    git config --global merge.conflictstyle diff3
+    git config --global mergetool.prompt false
+
     log 2 "Git" "Set default push strategy to simple"
     git config --global push.default simple
 }
