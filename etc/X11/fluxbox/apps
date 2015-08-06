@@ -1,0 +1,44 @@
+[app] (name=fbrun)
+  [Head]	{2}
+  [Position]	(UPPERLEFT)	{44% 53%}
+  [Deco]	{BORDER}
+  [Layer]	{2}
+[end]
+[app] (name=Navigator) (class=Firefox) (role=browser)
+  [Head]	{2}
+[end]
+[app] (name=gajim) (class=Gajim) (role=messages)
+  [Head]	{2}
+  [Dimensions]	{21% 33%}
+  [Position]	(UPPERLEFT)	{0% 66%}
+[end]
+[app] (name=urxvt)
+  [Deco]	{BORDER}
+[end]
+[app] (name=Workspace)
+  [Deco]	{BORDER}
+  [Position] (WINCENTER) {0 0}
+[end]
+[app] (name=Radio)
+  [Deco]	{BORDER}
+  [Position]	(BOTTOMRIGHT) {20 20}
+  [Layer] {6}
+  [Alpha] {200 120}
+[end]
+[app] (name=Profanity)
+  [Deco]	{BORDER}
+  [Position]	(TOPRIGHT) {20 20}
+  [Alpha] {200 120}
+[end]
+[app] (name=feh)
+  [Alpha] {255}
+[end]
+[app] (name=emulator64-x86)
+  [Position] {LEFTTOP} {5 5}
+  [Layer] {6}
+  [Deco] {BORDER}
+[end]
+[group]
+ [app] (name=Google-chrome) (class=Google-chrome) (role=browser)
+ [app] (name=Google-chrome) (class=Google-chrome) (role=pop-up)
+[end]

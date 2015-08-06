@@ -1,4 +1,0 @@
-#!/bin/sh
-
-hg update -C $1 && hg commit --close-branch -m "Closing branch"
-

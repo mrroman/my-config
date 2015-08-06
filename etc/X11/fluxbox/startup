@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# fluxbox startup-script:
+#
+# Lines starting with a '#' are ignored.
+
+xrandr | grep -Eq "^(HDMI|DP)[0-9] connected" && xrandr --output eDP1 --off
+
+fbsetbg -l &
+
+# Change your keymap:
+xmodmap "$HOME/etc/Xmodmap"
+
+setxkbmap pl
+
+xset fp+ $HOME/etc/X11/fonts/terminus
+xset fp rehash
+xrdb -I$HOME/etc/X11 -load $HOME/etc/X11/Xresources
+
+# Applications you want to run with fluxbox.
+# MAKE SURE THAT APPS THAT KEEP RUNNING HAVE AN ''&'' AT THE END.
+#
+compton &
+dunst &
+
+pasystray &
+skype &
+gajim &
+hipchat &
+urxvt -name Profanity -e profanity &
+urxvt -geometry 150x74 -name "Workspace" &
+
+exec fluxbox

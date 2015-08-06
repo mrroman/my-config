@@ -1,0 +1,28 @@
+[begin] (fluxbox)
+    [exec] (Terminal) {urxvt}
+    [exec] (Firefox) {firefox}
+    [exec] (Chrome) {google-chrome}
+    [exec] (Nexus 5 Emu) {~/bin/emu nexus5}
+
+    [submenu] (Utils) {}
+        [exec] (Gimp) {gimp}
+    [end]
+
+    [submenu] (Radio) {}
+        [exec] (Soma.fm - Groove Salad) {~/bin/radio "http://uwstream1.somafm.com:80"}
+    [end]
+    [submenu] (Fluxbox) {}
+       [config] (Configuration)
+       [submenu] (Styles) {}
+          [stylesdir] (/usr/share/fluxbox/styles)
+          [stylesdir] (~/.fluxbox/styles)
+       [end]
+       [workspaces] (Workspaces)
+       [reconfig] (Reconfigure)
+       [restart] (Restart)
+    [end]
+    [submenu] (Exit) {}
+        [exit] (Log out)
+        [exec] (Power off) {/usr/bin/dbus-send --system --print-reply --dest="org.freedesktop.ConsoleKit" /org/freedesktop/ConsoleKit/Manager org.freedesktop.ConsoleKit.Manager.Stop}
+    [end]
+[end]

@@ -1,0 +1,5 @@
+#!/bin/bash
+
+CMD='mpg123 "'$1'" |& ~/bin/icy-parser'
+echo $CMD
+urxvt -name "Radio" -geometry "60x2" -e bash -c "$CMD"
