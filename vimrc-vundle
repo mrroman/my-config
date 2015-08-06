@@ -60,6 +60,10 @@ Plugin 'marijnh/tern_for_vim'
 Plugin 'burnettk/vim-angular'
 Plugin 'othree/javascript-libraries-syntax.vim'
 
+Plugin 'Lokaltog/vim-easymotion'
+
+Plugin 'jceb/vim-orgmode'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -105,14 +109,13 @@ if has("gui_mac") || has("gui_macvim")
 end
 if has("gui_gtk")
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 10
-    set lines=50
-    set columns=140
+"    set lines=50
+"    set columns=140
 elseif has( "gui_win32")
     set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h10
     set lines=50
     set columns=140
 endif
-
 " change the mapleader from \ to ,
 let mapleader=","
 
