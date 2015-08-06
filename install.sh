@@ -105,9 +105,6 @@ function git_config {
     git config --global credential.helper cache
     git config --global credential.helper 'cache --timeout=3600'
     
-    log 2 "Git" "Vimdiff"
-    git config --global diff.external ~/.bin/git_diff_wrapper
-
     log 2 "Git" "Set default push strategy to simple"
     git config --global push.default simple
 }
