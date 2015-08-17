@@ -27,7 +27,7 @@ Plugin 'bling/vim-airline'
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-sleuth'
+" Plugin 'tpope/vim-sleuth'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-vinegar'
 
@@ -64,6 +64,7 @@ Plugin 'Lokaltog/vim-easymotion'
 
 Plugin 'jceb/vim-orgmode'
 
+Plugin 'hynek/vim-python-pep8-indent'
 Plugin 'davidhalter/jedi-vim'
 
 " All of your Plugins must be added before the following line
@@ -96,15 +97,15 @@ set shiftwidth=4	" Number of auto-indent spaces
 set smartindent	" Enable smart-indent
 set smarttab	" Enable smart-tabs
 set softtabstop=4	" Number of spaces per Tab
- 
+
 " Advanced
 set ruler	" Show row and column ruler information
  
 set undolevels=1000	" Number of undo levels
 set backspace=indent,eol,start	" Backspace behaviour
 
-colorscheme hybrid
 syntax on
+colorscheme hybrid
 
 if has("gui_mac") || has("gui_macvim")
 	set guifont=Monaco:h13
@@ -152,8 +153,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " Buffer navigation keys
-map <C-Left> :bp<CR>
-map <C-Right> :bn<CR>
+map <Leader>[ :bp<CR>
+map <Leader>] :bn<CR>
 
 " Ctrl P
 let g:ctrlp_custom_ignore = {
