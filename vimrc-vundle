@@ -16,9 +16,7 @@ endif
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-if !has("win32")
-    Plugin 'Valloric/YouCompleteMe'
-end
+Plugin 'Shougo/neocomplete'
 
 Plugin 'thinca/vim-localrc'
 Plugin 'bling/vim-airline'
@@ -33,9 +31,9 @@ Plugin 'tpope/vim-vinegar'
 
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
 Bundle 'ervandew/supertab'
-Plugin 'honza/vim-snippets'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'mhinz/vim-signify'
@@ -64,8 +62,12 @@ Plugin 'Lokaltog/vim-easymotion'
 
 Plugin 'jceb/vim-orgmode'
 
-Plugin 'hynek/vim-python-pep8-indent'
+Plugin 'klen/python-mode'
 Plugin 'davidhalter/jedi-vim'
+
+Plugin 'christoomey/vim-tmux-navigator'
+
+Plugin 'fatih/vim-go'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -229,3 +231,35 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:syntastic_python_checkers = ['python', 'pep8']
+
+"Neocomplete
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup=1
+let g:neocomplete#enable_smart_case=1
+
+"autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+"autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+"autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+"
+
+" Neocomplete snippets
+"
+" Plugin key-mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: pumvisible() ? "\<C-n>" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)"
+\: "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
